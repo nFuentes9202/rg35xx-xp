@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Escritorio XP: tema de prueba para la RG35XX Pro (640x480). Gráficos originales generados por gen.py.
+     Logos de sistemas: los del tema es-theme-knulli (GPLv3) por ruta, sin copiarlos. -->
+<theme defaultView="detailed">
+	<formatVersion>7</formatVersion>
+
+	<variables>
+		<logos>/usr/share/emulationstation/themes/es-theme-knulli/_inc/logos</logos>
+		<fuente>/usr/share/fonts/dejavu/DejaVuSans.ttf</fuente>
+		<fuenteC>/usr/share/fonts/dejavu/DejaVuSansCondensed.ttf</fuenteC>
+		<fuenteB>/usr/share/fonts/dejavu/DejaVuSans-Bold.ttf</fuenteB>
+		<logosFuenteB>/usr/share/emulationstation/themes/es-theme-knulli/_inc/fonts/font-bold.ttf</logosFuenteB>
+	</variables>
+
+	<!-- ======== Comunes a todas las vistas: fondo, barra de tareas, ayuda ======== -->
+	<view name="system,basic,detailed,grid">
+		<image name="fondo" extra="true">
+			<path>./art/fondo.png</path>
+			<pos>0 0</pos><size>1 1</size><zIndex>0</zIndex>
+		</image>
+		<image name="barra" extra="true">
+			<path>./art/barra.png</path>
+			<pos>0 0.9375</pos><size>1 0.0625</size><zIndex>40</zIndex>
+		</image>
+		<helpsystem name="help">
+			<pos>0.185 0.9375</pos>
+			<size>0.61 0.0625</size>
+			<textColor>FFFFFFFF</textColor>
+			<iconColor>FFFFFFFF</iconColor>
+			<fontPath>${fuente}</fontPath>
+			<fontSize>0.0185</fontSize>
+		</helpsystem>
+	</view>
+
+	<!-- ======== Escritorio: carrusel de sistemas ======== -->
+	<view name="system">
+		<carousel name="systemcarousel">
+			<type>horizontal</type>
+			<pos>0 0.55</pos>
+			<size>1 0.27</size>
+			<color>00000000</color>
+			<logoSize>0.28 0.20</logoSize>
+			<logoScale>1.3</logoScale>
+			<maxLogoCount>3</maxLogoCount>
+			<minLogoOpacity>1.0</minLogoOpacity>
+			<systemInfoDelay>0</systemInfoDelay>
+			<defaultTransition>slide</defaultTransition>
+			<zIndex>20</zIndex>
+		</carousel>
+		<image name="logo">
+			<path>${logos}/${system.theme}/logo.png</path>
+		</image>
+		<text name="logoText">
+			<fontPath>${logosFuenteB}</fontPath>
+			<color>FFFFFFFF</color>
+		</text>
+		<image name="iconos" extra="true">
+			<path>./art/iconos.png</path>
+			<pos>0.009 0.025</pos><size>0.11875 0.4917</size><zIndex>5</zIndex>
+		</image>
+		<image name="seleccion" extra="true">
+			<path>./art/seleccion.png</path>
+			<pos>0.2953 0.5917</pos><size>0.4094 0.1917</size><zIndex>15</zIndex>
+		</image>
+		<image name="globo" extra="true">
+			<path>./art/globo.png</path>
+			<pos>0.625 0.783</pos><size>0.3688 0.1458</size><zIndex>30</zIndex>
+		</image>
+		<text name="systemInfo">
+			<pos>0.68 0.833</pos><size>0.28 0.04</size>
+			<fontPath>${fuente}</fontPath><fontSize>0.025</fontSize>
+			<color>000000FF</color><backgroundColor>00000000</backgroundColor>
+			<alignment>left</alignment><zIndex>31</zIndex>
+		</text>
+	</view>
+
+	<!-- ======== Lista de juegos dentro de una ventana ======== -->
+	<view name="basic,detailed,grid">
+		<image name="ventana" extra="true">
+			<path>./art/ventana.png</path>
+			<pos>0.0125 0.0167</pos><size>0.975 0.8583</size><zIndex>10</zIndex>
+		</image>
+		<text name="tituloSombra" extra="true">
+			<text>${system.fullName}</text>
+			<pos>0.0517 0.0192</pos><size>0.76 0.054</size>
+			<fontPath>${fuenteB}</fontPath><fontSize>0.034</fontSize>
+			<color>0A246AFF</color><alignment>left</alignment><zIndex>11</zIndex>
+		</text>
+		<text name="titulo" extra="true">
+			<text>${system.fullName}</text>
+			<pos>0.05 0.0167</pos><size>0.76 0.054</size>
+			<fontPath>${fuenteB}</fontPath><fontSize>0.034</fontSize>
+			<color>FFFFFFFF</color><alignment>left</alignment><zIndex>12</zIndex>
+		</text>
+		<image name="tarea" extra="true">
+			<path>./art/tarea.png</path>
+			<pos>0.158 0.946</pos><size>0.234 0.0458</size><zIndex>41</zIndex>
+		</image>
+		<text name="tareaTexto" extra="true">
+			<text>${system.fullName}</text>
+			<pos>0.195 0.946</pos><size>0.19 0.0458</size>
+			<fontPath>${fuente}</fontPath><fontSize>0.027</fontSize>
+			<color>FFFFFFFF</color><alignment>left</alignment><zIndex>42</zIndex>
+		</text>
+		<helpsystem name="help">
+			<pos>0.025 0.824</pos>
+			<size>0.95 0.04</size>
+			<textColor>1F2F5FFF</textColor>
+			<iconColor>1F2F5FFF</iconColor>
+			<fontPath>${fuente}</fontPath>
+			<fontSize>0.020</fontSize>
+		</helpsystem>
+		<image name="logo"><visible>false</visible></image>
+		<text name="logoText"><visible>false</visible></text>
+	</view>
+
+	<view name="basic,detailed">
+		<textlist name="gamelist">
+			<pos>0.03 0.124</pos>
+			<size>0.495 0.688</size>
+			<selectorColor>316AC5FF</selectorColor>
+			<selectedColor>FFFFFFFF</selectedColor>
+			<primaryColor>000000FF</primaryColor>
+			<secondaryColor>1F4E9AFF</secondaryColor>
+			<fontPath>${fuenteC}</fontPath>
+			<fontSize>0.029</fontSize>
+			<lineSpacing>1.42</lineSpacing>
+			<alignment>left</alignment>
+			<horizontalMargin>0.008</horizontalMargin>
+			<zIndex>20</zIndex>
+		</textlist>
+	</view>
+
+	<view name="detailed">
+		<image name="md_image">
+			<pos>0.755 0.37</pos>
+			<maxSize>0.37 0.36</maxSize>
+			<origin>0.5 0.5</origin>
+			<zIndex>20</zIndex>
+		</image>
+		<text name="md_name">
+			<pos>0.566 0.565</pos><size>0.385 0.045</size>
+			<fontPath>${fuenteB}</fontPath><fontSize>0.030</fontSize>
+			<color>215DC6FF</color><alignment>left</alignment><zIndex>20</zIndex>
+		</text>
+		<text name="md_description">
+			<pos>0.566 0.612</pos><size>0.385 0.046</size>
+			<fontPath>${fuente}</fontPath><fontSize>0.022</fontSize>
+			<color>333333FF</color><alignment>left</alignment><zIndex>20</zIndex>
+		</text>
+		<text name="md_lbl_rating, md_lbl_releasedate, md_lbl_developer, md_lbl_publisher, md_lbl_genre, md_lbl_players, md_lbl_lastplayed, md_lbl_playcount, md_lbl_gametime">
+			<visible>false</visible>
+		</text>
+		<text name="md_genre, md_developer, md_players, md_publisher, md_playcount, md_gametime">
+			<visible>false</visible>
+		</text>
+		<rating name="md_rating"><visible>false</visible></rating>
+		<datetime name="md_releasedate, md_lastplayed"><visible>false</visible></datetime>
+		<video name="md_video"><visible>false</visible></video>
+		<image name="md_marquee, md_thumbnail"><visible>false</visible></image>
+	</view>
+
+	<view name="grid">
+		<imagegrid name="gamegrid">
+			<pos>0.03 0.124</pos>
+			<size>0.495 0.688</size>
+			<margin>0.012 0.016</margin>
+			<zIndex>20</zIndex>
+		</imagegrid>
+		<gridtile name="default">
+			<backgroundColor>FFFFFF00</backgroundColor>
+		</gridtile>
+		<gridtile name="selected">
+			<backgroundColor>316AC5FF</backgroundColor>
+		</gridtile>
+	</view>
+
+	<!-- ======== Menús del sistema (Main Menu, Quick Access...) estilo diálogo XP ======== -->
+	<view name="menu">
+		<menuBackground name="menubg">
+			<color>ECE9D8FF</color>
+			<path>./art/menu/frame.png</path>
+			<cornerSize>16 16</cornerSize>
+			<scrollbarColor>316AC5FF</scrollbarColor>
+		</menuBackground>
+		<menuText name="menutitle">
+			<fontPath>${fuenteB}</fontPath><fontSize>0.040</fontSize><color>215DC6FF</color>
+		</menuText>
+		<menuText name="menufooter">
+			<fontPath>${fuente}</fontPath><fontSize>0.020</fontSize><color>555555FF</color>
+		</menuText>
+		<menuText name="menutext">
+			<fontPath>${fuente}</fontPath><fontSize>0.034</fontSize>
+			<color>000000FF</color><selectedColor>FFFFFFFF</selectedColor>
+			<selectorColor>316AC5FF</selectorColor><separatorColor>D4D0C8FF</separatorColor>
+		</menuText>
+		<menuTextSmall name="menutextsmall">
+			<fontPath>${fuente}</fontPath><fontSize>0.026</fontSize><color>444444FF</color>
+		</menuTextSmall>
+		<menuGroup name="menugroup">
+			<fontPath>${fuenteB}</fontPath><fontSize>0.030</fontSize>
+			<color>215DC6FF</color><backgroundColor>D6DFF7FF</backgroundColor><separatorColor>00000000</separatorColor>
+		</menuGroup>
+	</view>
+
+	<!-- ======== Reloj y batería en la bandeja de la barra de tareas ======== -->
+	<view name="screen">
+		<text name="clock">
+			<pos>0.81 0.9375</pos>
+			<size>0.18 0.0625</size>
+			<fontPath>${fuente}</fontPath>
+			<fontSize>0.032</fontSize>
+			<color>FFFFFFFF</color>
+			<alignment>right</alignment>
+		</text>
+		<batteryIndicator name="batteryIndicator">
+			<pos>0.815 0.948</pos>
+			<size>0.07 0.04</size>
+			<color>FFFFFFFF</color>
+		</batteryIndicator>
+	</view>
+</theme>
